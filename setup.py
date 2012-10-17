@@ -15,5 +15,17 @@ setup(
         "console_scripts": [
             "vies = pyvies:main",
         ]
-    }
+    },
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Financial and Insurance Industry",
+        "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 2 :: Only",
+        "Topic :: Database :: Front-Ends",
+        "Topic :: Office/Business :: Financial :: Accounting",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Utilities",
+    ]
 )
