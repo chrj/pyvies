@@ -63,7 +63,7 @@ class Vies(object):
 
         return info
 
-if __name__ == "__main__":
+def main():
 
     if len(sys.argv) != 5:
 
@@ -74,6 +74,7 @@ if __name__ == "__main__":
 
         sys.stderr.write(
             "\nsee: http://ec.europa.eu/taxation_customs/vies/\n"
+            "     https://bitbucket.org/chrj/pyvies\n"
         )
 
         sys.exit(-255)
@@ -91,3 +92,6 @@ if __name__ == "__main__":
 
     for key, value in result.items():
         print "%s\n%s\n" % (key, value.encode("utf-8"))
+
+if __name__ == "__main__":
+    main()

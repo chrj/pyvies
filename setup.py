@@ -11,4 +11,9 @@ setup(
     url='https://bitbucket.org/chrj/pyvies',
     py_modules=["pyvies"],
     install_requires=file("requirements.txt").read(),
+    entry_points={
+        "console_scripts": [
+            "vies = pyvies:main",
+        ]
+    }
 )
