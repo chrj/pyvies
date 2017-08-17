@@ -1,55 +1,54 @@
-Installation
-------------
+# Installation
 
-> pip install pyvies
+    $ pip install pyvies
 
-Usage
------
+# Usage
 
 From Python:
 
-  import pyvies
+```python
+import pyvies
 
-  # Initialize the validator with *your* VAT number
+# Initialize the validator with *your* VAT number
 
-  v = pyvies.Vies("DK", 12345678)
+v = pyvies.Vies("DK", 12345678)
 
-  # Validate any VAT number in the EU to a dict containing these keys:
-  #  - "Date when request received"
-  #  - "Name"
-  #  - "Consultation Number"
-  #  - "Member State"
-  #  - "Address"
-  #  - "VAT Number" 
+# Validate any VAT number in the EU to a dict containing these keys:
+#  - "Date when request received"
+#  - "Name"
+#  - "Consultation Number"
+#  - "Member State"
+#  - "Address"
+#  - "VAT Number" 
 
-  try:
+try:
 
-      result = v.validate("GB", 12345678)
+    result = v.validate("GB", 12345678)
 
-  except pyvies.InvalidVATNumber, e:
+except pyvies.InvalidVATNumber, e:
 
-      # Catch validation errors
-      error = e.args[0]
+    # Catch validation errors
+    error = e.args[0]
 
-  except pyvies.Unavailable:
+except pyvies.Unavailable:
 
-      # The database is unavailable
-      pass
+    # The database is unavailable
+    pass
+```
 
 From the console:
 
-  $ vies <requester_country> <requester_vat> <country> <vat>
+    $ vies <requester_country> <requester_vat> <country> <vat>
 
-  E.g.:
+E.g.:
 
-  $ vies DK 12345678 GB 12345678
+    $ vies DK 12345678 GB 12345678
 
-  You can use the resulting error code to check for validation:
+You can use the resulting error code to check for validation:
 
-  $ vies DK 12345678 GB 12345678 && echo Valid
+    $ vies DK 12345678 GB 12345678 && echo Valid
 
-License
--------
+# License
 
 LGPL
 
